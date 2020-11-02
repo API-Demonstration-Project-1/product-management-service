@@ -1,8 +1,8 @@
-package io.swagger.api;
+package com.proarchs.product.api;
 
 import javax.xml.bind.annotation.XmlTransient;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-01T17:51:33.126Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
 
 @javax.xml.bind.annotation.XmlRootElement
 public class ApiResponseMessage {

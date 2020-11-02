@@ -1,25 +1,26 @@
-package io.swagger.model;
+package com.proarchs.product.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.proarchs.product.model.Data1;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.Data;
+
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Categoryresponse
+ * Productresponse1
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-01T17:51:33.126Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
 
 
 
 
-public class Categoryresponse   {
+public class Productresponse1   {
   @JsonProperty("success")
   private Boolean success = null;
 
@@ -27,12 +28,12 @@ public class Categoryresponse   {
   private String message = null;
 
   @JsonProperty("data")
-  private Data data = null;
+  private Data1 data = null;
 
   @JsonProperty("error_code")
   private Integer errorCode = null;
 
-  public Categoryresponse success(Boolean success) {
+  public Productresponse1 success(Boolean success) {
     this.success = success;
     return this;
   }
@@ -53,7 +54,7 @@ public class Categoryresponse   {
     this.success = success;
   }
 
-  public Categoryresponse message(String message) {
+  public Productresponse1 message(String message) {
     this.message = message;
     return this;
   }
@@ -74,7 +75,7 @@ public class Categoryresponse   {
     this.message = message;
   }
 
-  public Categoryresponse data(Data data) {
+  public Productresponse1 data(Data1 data) {
     this.data = data;
     return this;
   }
@@ -88,15 +89,15 @@ public class Categoryresponse   {
 
   @Valid
 
-  public Data getData() {
+  public Data1 getData() {
     return data;
   }
 
-  public void setData(Data data) {
+  public void setData(Data1 data) {
     this.data = data;
   }
 
-  public Categoryresponse errorCode(Integer errorCode) {
+  public Productresponse1 errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -126,11 +127,11 @@ public class Categoryresponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Categoryresponse categoryresponse = (Categoryresponse) o;
-    return Objects.equals(this.success, categoryresponse.success) &&
-        Objects.equals(this.message, categoryresponse.message) &&
-        Objects.equals(this.data, categoryresponse.data) &&
-        Objects.equals(this.errorCode, categoryresponse.errorCode);
+    Productresponse1 productresponse1 = (Productresponse1) o;
+    return Objects.equals(this.success, productresponse1.success) &&
+        Objects.equals(this.message, productresponse1.message) &&
+        Objects.equals(this.data, productresponse1.data) &&
+        Objects.equals(this.errorCode, productresponse1.errorCode);
   }
 
   @Override
@@ -141,7 +142,7 @@ public class Categoryresponse   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Categoryresponse {\n");
+    sb.append("class Productresponse1 {\n");
     
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
