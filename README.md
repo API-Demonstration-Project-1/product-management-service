@@ -1,8 +1,10 @@
 # product-management-service
 API to manage product and category
 
-check out the develop branch
-import into STS
+Check out the develop branch
+
+Import into STS
+
 Before starting this application
   1. ensure eureka server is running
   2. ensure config server is running
