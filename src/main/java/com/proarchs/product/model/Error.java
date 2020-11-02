@@ -1,68 +1,46 @@
-package io.swagger.model;
+package com.proarchs.product.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.Data;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Productresponse
+ * Error
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-01T17:51:33.126Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
 
 
 
 
-public class Productresponse   {
-  @JsonProperty("success")
-  private Boolean success = null;
-
+public class Error   {
   @JsonProperty("message")
   private String message = null;
 
-  @JsonProperty("data")
-  private Data data = null;
+  @JsonProperty("success")
+  private Boolean success = null;
 
-  @JsonProperty("error_code")
+  @JsonProperty("data")
+  private Object data = null;
+
+  @JsonProperty("errorCode")
   private Integer errorCode = null;
 
-  public Productresponse success(Boolean success) {
-    this.success = success;
-    return this;
-  }
-
-  /**
-   * Get success
-   * @return success
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-
-  public Boolean isSuccess() {
-    return success;
-  }
-
-  public void setSuccess(Boolean success) {
-    this.success = success;
-  }
-
-  public Productresponse message(String message) {
+  public Error message(String message) {
     this.message = message;
     return this;
   }
 
   /**
-   * Get message
+   * This is the Verification-related message
    * @return message
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "This is the Verification-related message")
   @NotNull
 
 
@@ -74,39 +52,57 @@ public class Productresponse   {
     this.message = message;
   }
 
-  public Productresponse data(Data data) {
+  public Error success(Boolean success) {
+    this.success = success;
+    return this;
+  }
+
+  /**
+   * True or False
+   * @return success
+  **/
+  @ApiModelProperty(required = true, value = "True or False")
+  @NotNull
+
+
+  public Boolean isSuccess() {
+    return success;
+  }
+
+  public void setSuccess(Boolean success) {
+    this.success = success;
+  }
+
+  public Error data(Object data) {
     this.data = data;
     return this;
   }
 
   /**
-   * Get data
+   * This is any data
    * @return data
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "This is any data")
 
-  @Valid
 
-  public Data getData() {
+  public Object getData() {
     return data;
   }
 
-  public void setData(Data data) {
+  public void setData(Object data) {
     this.data = data;
   }
 
-  public Productresponse errorCode(Integer errorCode) {
+  public Error errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
 
   /**
-   * Get errorCode
+   * This is gives error code info
    * @return errorCode
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "This is gives error code info")
 
 
   public Integer getErrorCode() {
@@ -126,25 +122,25 @@ public class Productresponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Productresponse productresponse = (Productresponse) o;
-    return Objects.equals(this.success, productresponse.success) &&
-        Objects.equals(this.message, productresponse.message) &&
-        Objects.equals(this.data, productresponse.data) &&
-        Objects.equals(this.errorCode, productresponse.errorCode);
+    Error error = (Error) o;
+    return Objects.equals(this.message, error.message) &&
+        Objects.equals(this.success, error.success) &&
+        Objects.equals(this.data, error.data) &&
+        Objects.equals(this.errorCode, error.errorCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(success, message, data, errorCode);
+    return Objects.hash(message, success, data, errorCode);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Productresponse {\n");
+    sb.append("class Error {\n");
     
-    sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("}");

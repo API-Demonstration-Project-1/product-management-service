@@ -1,24 +1,26 @@
-package io.swagger.model;
+package com.proarchs.product.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.proarchs.product.model.Product;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Error
+ * ProductResponse
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-01T17:51:33.126Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
 
 
 
 
-public class Error   {
+public class ProductResponse   {
   @JsonProperty("message")
   private String message = null;
 
@@ -26,12 +28,12 @@ public class Error   {
   private Boolean success = null;
 
   @JsonProperty("data")
-  private Object data = null;
+  private Product data = null;
 
   @JsonProperty("errorCode")
   private Integer errorCode = null;
 
-  public Error message(String message) {
+  public ProductResponse message(String message) {
     this.message = message;
     return this;
   }
@@ -52,7 +54,7 @@ public class Error   {
     this.message = message;
   }
 
-  public Error success(Boolean success) {
+  public ProductResponse success(Boolean success) {
     this.success = success;
     return this;
   }
@@ -73,27 +75,28 @@ public class Error   {
     this.success = success;
   }
 
-  public Error data(Object data) {
+  public ProductResponse data(Product data) {
     this.data = data;
     return this;
   }
 
   /**
-   * This is any data
+   * Get data
    * @return data
   **/
-  @ApiModelProperty(value = "This is any data")
+  @ApiModelProperty(value = "")
 
+  @Valid
 
-  public Object getData() {
+  public Product getData() {
     return data;
   }
 
-  public void setData(Object data) {
+  public void setData(Product data) {
     this.data = data;
   }
 
-  public Error errorCode(Integer errorCode) {
+  public ProductResponse errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
@@ -122,11 +125,11 @@ public class Error   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Error error = (Error) o;
-    return Objects.equals(this.message, error.message) &&
-        Objects.equals(this.success, error.success) &&
-        Objects.equals(this.data, error.data) &&
-        Objects.equals(this.errorCode, error.errorCode);
+    ProductResponse productResponse = (ProductResponse) o;
+    return Objects.equals(this.message, productResponse.message) &&
+        Objects.equals(this.success, productResponse.success) &&
+        Objects.equals(this.data, productResponse.data) &&
+        Objects.equals(this.errorCode, productResponse.errorCode);
   }
 
   @Override
@@ -137,7 +140,7 @@ public class Error   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Error {\n");
+    sb.append("class ProductResponse {\n");
     
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    success: ").append(toIndentedString(success)).append("\n");

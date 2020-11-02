@@ -1,4 +1,4 @@
-package io.swagger.model;
+package com.proarchs.product.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * Category
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-01T17:51:33.126Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
 
 
 
@@ -34,10 +34,11 @@ public class Category   {
   }
 
   /**
-   * This is the ID of the Category made for Subscription
+   * This is the ID of the category
    * @return categoryId
   **/
-  @ApiModelProperty(value = "This is the ID of the Category made for Subscription")
+  @ApiModelProperty(required = true, value = "This is the ID of the category")
+  @NotNull
 
 
   public Integer getCategoryId() {
@@ -54,11 +55,10 @@ public class Category   {
   }
 
   /**
-   * This is the name of the category to which product belongs to
+   * Name of the category
    * @return categoryName
   **/
-  @ApiModelProperty(required = true, value = "This is the name of the category to which product belongs to")
-  @NotNull
+  @ApiModelProperty(value = "Name of the category")
 
 
   public String getCategoryName() {
@@ -75,10 +75,10 @@ public class Category   {
   }
 
   /**
-   * Desciption of the category
+   * Description of the category
    * @return categoryDescription
   **/
-  @ApiModelProperty(value = "Desciption of the category")
+  @ApiModelProperty(value = "Description of the category")
 
 
   public String getCategoryDescription() {

@@ -1,19 +1,11 @@
-package io.swagger.model;
+package com.proarchs.product.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.springframework.validation.annotation.Validated;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -21,53 +13,40 @@ import javax.validation.constraints.*;
  * Product
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-01T17:51:33.126Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
 
 
 
-@Entity
-@Table(name = "PRODUCT")
+
 public class Product   {
   @JsonProperty("productId")
-  @Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "product_id", nullable = false)
   private Integer productId = null;
 
   @JsonProperty("productShortName")
-	@Column(name = "product_short_name", nullable = false)
   private String productShortName = null;
 
   @JsonProperty("productLongName")
-	@Column(name = "product_long_name", nullable = false)
   private String productLongName = null;
 
   @JsonProperty("productDescription")
-	@Column(name = "product_description", nullable = false)
-  private BigDecimal productDescription = null;
+  private String productDescription = null;
 
   @JsonProperty("productSku")
-	@Column(name = "product_sku", nullable = false)
   private String productSku = null;
 
   @JsonProperty("productCategoryId")
-	@Column(name = "product_category_id", nullable = false)
   private Integer productCategoryId = null;
 
   @JsonProperty("productUnitPrice")
-	@Column(name = "product_unit_price", nullable = false)
-  private BigDecimal productUnitPrice = null;
+  private Double productUnitPrice = null;
 
   @JsonProperty("productAvailable")
-	@Column(name = "product_available", nullable = false)
   private String productAvailable = null;
 
   @JsonProperty("productTypeId")
-	@Column(name = "product_type_id", nullable = false)
   private Integer productTypeId = null;
 
   @JsonProperty("productImagesId")
-	@Column(name = "product_images_id", nullable = false)
   private String productImagesId = null;
 
   public Product productId(Integer productId) {
@@ -79,7 +58,8 @@ public class Product   {
    * This is the ID of the product
    * @return productId
   **/
-  @ApiModelProperty(value = "This is the ID of the product")
+  @ApiModelProperty(required = true, value = "This is the ID of the product")
+  @NotNull
 
 
   public Integer getProductId() {
@@ -131,7 +111,7 @@ public class Product   {
     this.productLongName = productLongName;
   }
 
-  public Product productDescription(BigDecimal productDescription) {
+  public Product productDescription(String productDescription) {
     this.productDescription = productDescription;
     return this;
   }
@@ -140,15 +120,15 @@ public class Product   {
    * This is detailed description of the product
    * @return productDescription
   **/
-  @ApiModelProperty(value = "This is detailed description of the product")
+  @ApiModelProperty(required = true, value = "This is detailed description of the product")
+  @NotNull
 
-  @Valid
 
-  public BigDecimal getProductDescription() {
+  public String getProductDescription() {
     return productDescription;
   }
 
-  public void setProductDescription(BigDecimal productDescription) {
+  public void setProductDescription(String productDescription) {
     this.productDescription = productDescription;
   }
 
@@ -194,7 +174,7 @@ public class Product   {
     this.productCategoryId = productCategoryId;
   }
 
-  public Product productUnitPrice(BigDecimal productUnitPrice) {
+  public Product productUnitPrice(Double productUnitPrice) {
     this.productUnitPrice = productUnitPrice;
     return this;
   }
@@ -206,13 +186,12 @@ public class Product   {
   @ApiModelProperty(required = true, value = "Price of the product")
   @NotNull
 
-  @Valid
 
-  public BigDecimal getProductUnitPrice() {
+  public Double getProductUnitPrice() {
     return productUnitPrice;
   }
 
-  public void setProductUnitPrice(BigDecimal productUnitPrice) {
+  public void setProductUnitPrice(Double productUnitPrice) {
     this.productUnitPrice = productUnitPrice;
   }
 
@@ -245,8 +224,7 @@ public class Product   {
    * Denotes the type of the product(product variant)(foreign key from item_type)
    * @return productTypeId
   **/
-  @ApiModelProperty(required = true, value = "Denotes the type of the product(product variant)(foreign key from item_type)")
-  @NotNull
+  @ApiModelProperty(value = "Denotes the type of the product(product variant)(foreign key from item_type)")
 
 
   public Integer getProductTypeId() {

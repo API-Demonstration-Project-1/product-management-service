@@ -1,9 +1,10 @@
-package io.swagger.api;
+package com.proarchs.product.api;
 
-import io.swagger.model.Category;
-import io.swagger.model.Categoryresponse;
-import io.swagger.model.Error;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.proarchs.product.model.Category;
+import com.proarchs.product.model.Categoryresponse;
+import com.proarchs.product.model.Error;
+
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +23,7 @@ import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-01T17:51:33.126Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
 
 @Controller
 public class CategoryApiController implements CategoryApi {
@@ -39,16 +40,16 @@ public class CategoryApiController implements CategoryApi {
         this.request = request;
     }
 
-    public ResponseEntity<Void> categoryByCategoryIdDELETE(@ApiParam(value = "",required=true) @PathVariable("CategoryId") String categoryId) {
+    public ResponseEntity<Void> categoryByCategoryIdDELETE(@ApiParam(value = "",required=true) @PathVariable("categoryId") String categoryId) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Category> categoryByCategoryIdGET(@ApiParam(value = "",required=true) @PathVariable("CategoryId") String categoryId) {
+    public ResponseEntity<Category> categoryByCategoryIdGET(@ApiParam(value = "",required=true) @PathVariable("categoryId") String categoryId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<Category>(objectMapper.readValue("{  \"categoryName\" : \"categoryName\",  \"categoryId\" : 0,  \"categoryDescription\" : \"categoryDescription\"}", Category.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<Category>(objectMapper.readValue("{  \"message\" : \"Forbidden\",  \"success\" : false,  \"data\" : {    \"productId\" : 123434,    \"productShortName\" : \"PTMS_FREE\",    \"productLongName\" : \"PTMS_FREE_MONTHLY_SUBSCRIPTION\",    \"productDescription\" : \"PTMS service offered for free for a month from the date of subscription/registration\",    \"productSku\" : \"PTMS_FREE_1_MONTH\",    \"productCategoryId\" : 1,    \"productUnitPrice\" : 0,    \"productAvailable\" : \"Y\",    \"productTypeId\" : 1,    \"productImagesId\" : 123  },  \"errorCode\" : -1}", Category.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<Category>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -58,7 +59,7 @@ public class CategoryApiController implements CategoryApi {
         return new ResponseEntity<Category>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Categoryresponse> categoryByCategoryIdPOST(@ApiParam(value = "",required=true) @PathVariable("CategoryId") String categoryId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Category body) {
+    public ResponseEntity<Categoryresponse> categoryByCategoryIdPOST(@ApiParam(value = "",required=true) @PathVariable("categoryId") String categoryId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Category body) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -72,7 +73,7 @@ public class CategoryApiController implements CategoryApi {
         return new ResponseEntity<Categoryresponse>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Category> categoryByCategoryIdPUT(@ApiParam(value = "",required=true) @PathVariable("CategoryId") String categoryId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Category body) {
+    public ResponseEntity<Category> categoryByCategoryIdPUT(@ApiParam(value = "",required=true) @PathVariable("categoryId") String categoryId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Category body) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -86,7 +87,7 @@ public class CategoryApiController implements CategoryApi {
         return new ResponseEntity<Category>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<List<Category>> categoryGET(@ApiParam(value = "Get Category info for a given Tenant Name") @Valid @RequestParam(value = "tenantName", required = false) String tenantName,@ApiParam(value = "Get all Category info based on Category status") @Valid @RequestParam(value = "CategoryStatus", required = false) String categoryStatus,@ApiParam(value = "Get all Category info based on Category method") @Valid @RequestParam(value = "CategoryMethod", required = false) String categoryMethod) {
+    public ResponseEntity<List<Category>> categoryGET(@ApiParam(value = "Get payment info for a given Tenant Name") @Valid @RequestParam(value = "categoryName", required = false) String categoryName) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {

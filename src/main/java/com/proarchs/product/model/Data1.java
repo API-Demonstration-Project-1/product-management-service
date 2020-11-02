@@ -1,4 +1,4 @@
-package io.swagger.model;
+package com.proarchs.product.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,19 +10,19 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Data
+ * Data1
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-01T17:51:33.126Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
 
 
 
 
-public class Data   {
+public class Data1   {
   @JsonProperty("id")
   private Integer id = null;
 
-  public Data id(Integer id) {
+  public Data1 id(Integer id) {
     this.id = id;
     return this;
   }
@@ -52,8 +52,8 @@ public class Data   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Data data = (Data) o;
-    return Objects.equals(this.id, data.id);
+    Data1 data1 = (Data1) o;
+    return Objects.equals(this.id, data1.id);
   }
 
   @Override
@@ -64,7 +64,7 @@ public class Data   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Data {\n");
+    sb.append("class Data1 {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
