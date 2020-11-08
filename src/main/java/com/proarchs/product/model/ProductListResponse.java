@@ -1,8 +1,9 @@
 package com.proarchs.product.model;
 
+import java.util.List;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.proarchs.product.model.Data1;
+import com.proarchs.product.model.Product;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -12,7 +13,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Productresponse1
+ * ProductResponse
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-11-02T06:47:09.808Z")
@@ -20,51 +21,29 @@ import javax.validation.constraints.*;
 
 
 
-public class Productresponse1   {
-  @JsonProperty("success")
-  private Boolean success = null;
-
+public class ProductListResponse   {
   @JsonProperty("message")
   private String message = null;
 
-  @JsonProperty("data")
-  private Data1 data = null;
+  @JsonProperty("success")
+  private Boolean success = null;
 
-  @JsonProperty("error_code")
+  @JsonProperty("data")
+  private List<Product> data = null;
+
+  @JsonProperty("errorCode")
   private Integer errorCode = null;
 
-  public Productresponse1 success(Boolean success) {
-    this.success = success;
-    return this;
-  }
-
-  /**
-   * Get success
-   * @return success
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-
-  public Boolean isSuccess() {
-    return success;
-  }
-
-  public Productresponse1 setSuccess(Boolean success) {
-    this.success = success;
-    return this;
-  }
-
-  public Productresponse1 message(String message) {
+  public ProductListResponse message(String message) {
     this.message = message;
     return this;
   }
 
   /**
-   * Get message
+   * This is the Verification-related message
    * @return message
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "This is the Verification-related message")
   @NotNull
 
 
@@ -72,12 +51,32 @@ public class Productresponse1   {
     return message;
   }
 
-  public Productresponse1 setMessage(String message) {
+  public void setMessage(String message) {
     this.message = message;
+  }
+
+  public ProductListResponse success(Boolean success) {
+    this.success = success;
     return this;
   }
 
-  public Productresponse1 data(Data1 data) {
+  /**
+   * True or False
+   * @return success
+  **/
+  @ApiModelProperty(required = true, value = "True or False")
+  @NotNull
+
+
+  public Boolean isSuccess() {
+    return success;
+  }
+
+  public void setSuccess(Boolean success) {
+    this.success = success;
+  }
+
+  public ProductListResponse data(List<Product> data) {
     this.data = data;
     return this;
   }
@@ -86,40 +85,36 @@ public class Productresponse1   {
    * Get data
    * @return data
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
   @Valid
 
-  public Data1 getData() {
+  public List<Product> getData() {
     return data;
   }
 
-  public Productresponse1 setData(Data1 data) {
+  public void setData(List<Product> data) {
     this.data = data;
-    return this;
   }
 
-  public Productresponse1 errorCode(Integer errorCode) {
+  public ProductListResponse errorCode(Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
 
   /**
-   * Get errorCode
+   * This is gives error code info
    * @return errorCode
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "This is gives error code info")
 
 
   public Integer getErrorCode() {
     return errorCode;
   }
 
-  public Productresponse1 setErrorCode(Integer errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
-    return this;
   }
 
 
@@ -131,25 +126,25 @@ public class Productresponse1   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Productresponse1 productresponse1 = (Productresponse1) o;
-    return Objects.equals(this.success, productresponse1.success) &&
-        Objects.equals(this.message, productresponse1.message) &&
-        Objects.equals(this.data, productresponse1.data) &&
-        Objects.equals(this.errorCode, productresponse1.errorCode);
+    ProductListResponse productResponse = (ProductListResponse) o;
+    return Objects.equals(this.message, productResponse.message) &&
+        Objects.equals(this.success, productResponse.success) &&
+        Objects.equals(this.data, productResponse.data) &&
+        Objects.equals(this.errorCode, productResponse.errorCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(success, message, data, errorCode);
+    return Objects.hash(message, success, data, errorCode);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Productresponse1 {\n");
+    sb.append("class ProductResponse {\n");
     
-    sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("}");

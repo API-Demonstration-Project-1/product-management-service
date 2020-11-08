@@ -10,7 +10,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = {"com.proarchs.product.api.configuration"})
+@ComponentScan(basePackages = {"com.proarchs.product.api.configuration",
+							   "com.proarchs.product",
+							   "com.proarchs.product.api",
+							   "com.proarchs.product.model"})
 public class ProductAPISpringBootApp implements CommandLineRunner {
 
     @Override
