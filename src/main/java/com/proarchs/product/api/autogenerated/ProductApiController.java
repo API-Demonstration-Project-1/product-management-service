@@ -72,7 +72,10 @@ public class ProductApiController implements ProductApi {
     		}catch(java.util.NoSuchElementException noValuePresent) {
     			return errorResponse("Product could not be found", HttpStatus.NOT_FOUND);
     		}
-    		
+    		catch(Exception e) {
+    			log.info("Exception : ", e);
+    			return errorResponse("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
+    		}
     	}
     		return errorResponse("Please provide appropriate productId in the URI", HttpStatus.BAD_REQUEST);
     }
@@ -107,7 +110,8 @@ public class ProductApiController implements ProductApi {
     		return errorResponse("Please provide appropriate productId in the URI", HttpStatus.BAD_REQUEST);
     }
 
-    public ResponseEntity<String> productByProductIdPUT(@ApiParam(value = "",required=true) @PathVariable("productId") Integer productId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Product body) {
+    //public ResponseEntity<String> productByProductIdPUT(@ApiParam(value = "",required=true) @PathVariable("productId") Integer productId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Product body) {
+    public ResponseEntity<String> productByProductIdPUT(@ApiParam(value = "",required=true) @PathVariable("productId") Integer productId,@ApiParam(value = "" ,required=true ) @RequestBody Product body) {
     	if(productId!=null) {
     		try {
     		    Product dbObject = productService.get(productId); //retreive from db. exception is thrown if not present
@@ -157,7 +161,10 @@ public class ProductApiController implements ProductApi {
     		}catch(java.util.NoSuchElementException noValuePresent) {
     			return errorResponse("Product could not be found", HttpStatus.NOT_FOUND);
     		}
-    		
+    		catch(Exception e) {
+    			log.info("Exception : ", e);
+    			return errorResponse("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
+    		}
     	}
       		log.error("get all threw error");
     		return errorResponse("Please provide appropriate productId in the URI", HttpStatus.INTERNAL_SERVER_ERROR);

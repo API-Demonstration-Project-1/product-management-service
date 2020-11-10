@@ -32,74 +32,7 @@ public class ResponsePreparator {
 	public void setToExcludeNull(boolean value) {
 		toExcludeNull = value;
 	}
-	
-	public static String prepareProductPOSTResponse(Object dataInfo, String msg, boolean isSuccess, Integer errorCode) throws IllegalAccessException, InstantiationException {
-		Data1 data = null;
-		
-		if (dataInfo != null) {
-			data = new Data1();
-			data.setId(new Integer(dataInfo.toString()));
-		}
 
-		Productresponse1 productResponse1 = new Productresponse1();
-		productResponse1.data(data)
-						.errorCode(errorCode)
-						.message(msg)
-						.success(isSuccess);
-        return serializeResponse(productResponse1);
-	}
-	
-
-
-	public static String prepareProductGETResponse(Object dataInfo, String msg, boolean isSuccess, Integer errorCode) throws IllegalAccessException, InstantiationException {
-		ProductResponse productresponse = null;
-		if (dataInfo != null) {
-			productresponse = new ProductResponse()
-						   			.data((Product)dataInfo)
-						   			.errorCode(errorCode)
-						   			.message(msg)
-						   			.success(isSuccess);
-		}
-		return serializeResponse(productresponse);
-	}
-
-
-	
-	public static String prepareProductDeleteResponse(Object dataInfo, String msg, boolean isSuccess, Integer errorCode) {
-		ProductResponse productResponse = null;
-		if(dataInfo!=null) {
-			productResponse = new ProductResponse();
-			productResponse.setData((Product) dataInfo);
-			productResponse.setMessage(msg);
-			productResponse.setErrorCode(errorCode);
-			productResponse.setSuccess(isSuccess);
-		}
-		return serializeResponse(productResponse);
-	}
-
-	
-	// NOT USED
-	/*
-	 * public static List<Registration>
-	 * prepareGETRegistrationResponse(List<TenantInfo> tenantInfoList) {
-	 * ListIterator<TenantInfo> tenantInfoListIter = tenantInfoList.listIterator();
-	 * List<Registration> regList = new ArrayList<Registration>();
-	 * 
-	 * while(tenantInfoListIter.hasNext()) { TenantInfo currentItem =
-	 * tenantInfoListIter.next();
-	 * 
-	 * Registration regObj = new Registration();
-	 * regObj.setTenantId(currentItem.getTenantId().toString());
-	 * regObj.setTenantName(currentItem.getTenantName());
-	 * regObj.setTenantUsername(currentItem.getTenantUsername());
-	 * regObj.setTenantPassword(PTMSConstants.PASSWORD_FIELD_VALUE);
-	 * regObj.setTenantEmail(currentItem.getTenantEmail());
-	 * regObj.setTenantVerified(currentItem.getTenantVerified());
-	 * 
-	 * regList.add(regObj); }
-	 * 
-	 * return regList; }
-	 */
 	
 	public static <E>  String serializeResponse(E element) {
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
