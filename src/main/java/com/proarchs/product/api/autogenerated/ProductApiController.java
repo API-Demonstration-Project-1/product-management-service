@@ -89,7 +89,7 @@ public class ProductApiController implements ProductApi {
     			if(body.getProductShortName()!=null) dbObject.setProductShortName(body.getProductShortName());
     			if(body.getProductLongName()!=null) dbObject.setProductLongName(body.getProductLongName());
     			if(body.getProductDescription()!=null) dbObject.setProductDescription(body.getProductDescription());
-    			if(body.getProductSku()!=null) dbObject.setProductSku(body.getProductSku());
+    			//if(body.getProductSku()!=null) dbObject.setProductSku(body.getProductSku());
     			if(body.getProductCategoryId()!=null) dbObject.setProductCategoryId(body.getProductCategoryId());
     			if(body.getProductUnitPrice()!=null) dbObject.setProductUnitPrice(body.getProductUnitPrice());
     			if(body.getProductAvailable()!=null) dbObject.setProductAvailable(body.getProductAvailable());
@@ -120,7 +120,7 @@ public class ProductApiController implements ProductApi {
     			if(body.getProductShortName()!=null) dbObject.setProductShortName(body.getProductShortName());
     			if(body.getProductLongName()!=null) dbObject.setProductLongName(body.getProductLongName());
     			if(body.getProductDescription()!=null) dbObject.setProductDescription(body.getProductDescription());
-    			if(body.getProductSku()!=null) dbObject.setProductSku(body.getProductSku());
+    			//if(body.getProductSku()!=null) dbObject.setProductSku(body.getProductSku());
     			if(body.getProductCategoryId()!=null) dbObject.setProductCategoryId(body.getProductCategoryId());
     			if(body.getProductUnitPrice()!=null) dbObject.setProductUnitPrice(body.getProductUnitPrice());
     			if(body.getProductAvailable()!=null) dbObject.setProductAvailable(body.getProductAvailable());

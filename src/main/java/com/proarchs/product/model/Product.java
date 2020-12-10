@@ -46,9 +46,12 @@ public class Product   {
 	@Column(name = "product_description", nullable = false)
   private String productDescription = null;
 
-  @JsonProperty("productSku")
-	@Column(name = "product_sku", nullable = false)
-  private String productSku = null;
+	/*
+	 * @JsonProperty("productSku")
+	 * 
+	 * @Column(name = "product_sku", nullable = false) private String productSku =
+	 * null;
+	 */
 
   @JsonProperty("productCategoryId")
 	@Column(name = "product_category_id", nullable = false)
@@ -152,10 +155,10 @@ public class Product   {
     this.productDescription = productDescription;
   }
 
-  public Product productSku(String productSku) {
-    this.productSku = productSku;
-    return this;
-  }
+	/*
+	 * public Product productSku(String productSku) { this.productSku = productSku;
+	 * return this; }
+	 */
 
   /**
    * Internally identifiable sku for the product
@@ -165,13 +168,12 @@ public class Product   {
   @NotNull
 
 
-  public String getProductSku() {
-    return productSku;
-  }
-
-  public void setProductSku(String productSku) {
-    this.productSku = productSku;
-  }
+	/*
+	 * public String getProductSku() { return productSku; }
+	 * 
+	 * public void setProductSku(String productSku) { this.productSku = productSku;
+	 * }
+	 */
 
   public Product productCategoryId(Integer productCategoryId) {
     this.productCategoryId = productCategoryId;
@@ -291,7 +293,7 @@ public class Product   {
         Objects.equals(this.productShortName, product.productShortName) &&
         Objects.equals(this.productLongName, product.productLongName) &&
         Objects.equals(this.productDescription, product.productDescription) &&
-        Objects.equals(this.productSku, product.productSku) &&
+      //  Objects.equals(this.productSku, product.productSku) &&
         Objects.equals(this.productCategoryId, product.productCategoryId) &&
         Objects.equals(this.productUnitPrice, product.productUnitPrice) &&
         Objects.equals(this.productAvailable, product.productAvailable) &&
@@ -301,7 +303,7 @@ public class Product   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(productId, productShortName, productLongName, productDescription, productSku, productCategoryId, productUnitPrice, productAvailable, productTypeId, productImagesId);
+    return Objects.hash(productId, productShortName, productLongName, productDescription, productCategoryId, productUnitPrice, productAvailable, productTypeId, productImagesId);
   }
 
   @Override
@@ -313,7 +315,7 @@ public class Product   {
     sb.append("    productShortName: ").append(toIndentedString(productShortName)).append("\n");
     sb.append("    productLongName: ").append(toIndentedString(productLongName)).append("\n");
     sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
-    sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
+    //sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
     sb.append("    productCategoryId: ").append(toIndentedString(productCategoryId)).append("\n");
     sb.append("    productUnitPrice: ").append(toIndentedString(productUnitPrice)).append("\n");
     sb.append("    productAvailable: ").append(toIndentedString(productAvailable)).append("\n");
